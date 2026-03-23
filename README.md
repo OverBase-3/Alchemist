@@ -201,7 +201,7 @@ El rendimiento biomasico aerobio de E. coli sobre glucosa, Y_xs, tiene un valor 
 
 El crecimiento sigue un modelo logístico de tres parámetros con µ constante durante la fase exponencial e inhibición por producto al acercarse a CDM_max.
 
-###CDM_max de la fase batch cuando el paper reporta fed-batch
+### CDM_max de la fase batch cuando el paper reporta fed-batch
 
 El objetivo de Alchemist es optimizar la formulación del medio base (batch), no la estrategia de alimentación (fed-batch), que es una variable de proceso independiente de la composición del medio
 
