@@ -1,0 +1,269 @@
+{
+  "_comentario": "Restricciones biologicas de E. coli — Alchemist v1.4.",
+  "_referencias": [
+    "Pirt SJ (1965) Proc R Soc Lond B 163:224",
+    "Roels JA (1980) Biotechnol Bioeng 22:2457",
+    "Cayley et al (1991) J Bacteriol 173:3946",
+    "Luli & Strohl (1990) Appl Env Microbiol 56:1004"
+  ],
+  "grupo": "E.coli",
+  "condiciones_entorno": {
+    "_comentario": "Limites absolutos. Fuera de estos rangos la formulacion es penalizada.",
+    "temperature_C": {
+      "min": 28.0,
+      "max": 40.0,
+      "optimo": 37.0,
+      "advertencia_min": "Temperatura demasiado baja: µ cae drasticamente por debajo de 28°C. Optimo: 37°C.",
+      "advertencia_max": "Temperatura demasiado alta: desnaturalizacion de proteinas por encima de 40°C. Optimo: 37°C."
+    },
+    "pH": {
+      "min": 6.8,
+      "max": 7.5,
+      "optimo": 7.0,
+      "advertencia_min": "pH demasiado acido: inhibicion metabolica por debajo de 6.80. Optimo: 7.0.",
+      "advertencia_max": "pH demasiado basico: reduccion marcada de µ por encima de 7.5. Optimo: 7.0."
+    },
+    "agitation_rpm": {
+      "min": 150.0,
+      "max": 300.0,
+      "advertencia_min": "Agitacion insuficiente: E. coli aerobia requiere minimo 150 rpm para transferencia de oxigeno. Por debajo, se acumula CO2, cae el O2 disuelto y se activa fermentacion mixta con acumulacion de acetato.",
+      "advertencia_max": "Agitacion excesiva: por encima de 300 rpm el cizallamiento mecanico puede danar la membrana."
+    },
+    "carriers": {
+      "permitido": false,
+      "advertencia": "E. coli es un microorganismo de suspension. Los microcarriers no aplican a procariotes."
+    }
+  },
+  "estequiometria_biomasa": {
+    "_comentario": "Composicion elemental canonica de biomasa bacterial. Fuente: Roels 1980, Herbert 1976.",
+    "N_fraction": 0.132,
+    "_N_fraction_nota": "Fraccion masica de N: 13.2 g N / 100 g CDM",
+    "C_fraction_biomass": 0.5,
+    "_C_fraction_nota": "Fraccion masica de C en biomasa seca: 50 g C / 100 g CDM. Usar para C_req en g C/L — comparar con C_available en g C/L.",
+    "Yx_s_aerobico": 0.45,
+    "_Yx_s_nota": "Rendimiento biomasico aerobio: 0.45 g CDM / g glucosa. NO usar para C_req estequiometrico.",
+    "Yx_s_anaerobico": 0.12,
+    "N_deficit_tolerancia": 0.1,
+    "N_deficit_descarte": 0.4,
+    "advertencia_deficit_N": "Deficit de nitrogeno: el medio no contiene suficiente N para alcanzar la CDM predicha. El cultivo quedara N-limitante.",
+    "advertencia_exceso_C": "Exceso de C relativo al N disponible: riesgo de overflow metabolico."
+  },
+  "fuentes_nitrogeno": {
+    "_comentario": "Fraccion de N en g N / g compuesto.",
+    "ammonium_chloride": 0.2617,
+    "ammonium_sulfate": 0.212,
+    "ammonium_dihydrogen_phosphate": 0.1217,
+    "urea": 0.4664,
+    "tryptone": 0.14,
+    "yeast_extract": 0.1,
+    "casamino_acids": 0.135,
+    "peptone_from_casein": 0.14,
+    "meat_extract": 0.12,
+    "l_glutamine": 0.0958,
+    "nh42hpo4": 0.212,
+    "nh4h2po4": 0.1217,
+    "mops": 0.067,
+    "tricine": 0.078
+  },
+  "fuentes_carbono": {
+    "_comentario": "Fraccion de C en g C / g compuesto.",
+    "glucose": 0.4,
+    "glycerol": 0.391,
+    "sucrose": 0.4211,
+    "lactose": 0.4211,
+    "galactose": 0.4,
+    "sodium_acetate": 0.293,
+    "sodium_pyruvate": 0.327,
+    "yeast_extract": 0.45,
+    "tryptone": 0.45,
+    "casamino_acids": 0.45,
+    "peptone_from_casein": 0.45,
+    "meat_extract": 0.45,
+    "l_glutamine": 0.411
+  },
+  "micronutrientes_esenciales": {
+    "_comentario": "Componentes cuya ausencia impide el crecimiento. La Capa 3 los inyecta automaticamente.",
+    "mgso4_7h2o": {
+      "conc_min_g_L": 0.12,
+      "funcion": "Mg2+ cofactor de ribosomas y kinasas",
+      "advertencia": "Ausencia de MgSO4: cofactor esencial de mas de 300 enzimas. Crecimiento severely inhibido."
+    },
+    "feso4_7h2o": {
+      "conc_min_g_L": 0.005,
+      "funcion": "Fe2+ citocromos y enzimas respiratorias",
+      "advertencia": "Ausencia de FeSO4: esencial para citocromos de la cadena respiratoria. Crecimiento aerobio imposible."
+    },
+    "cacl2_2h2o": {
+      "conc_min_g_L": 0.011,
+      "funcion": "Ca2+ integridad membrana externa",
+      "advertencia": "Ausencia de CaCl2: necesario para la integridad de la membrana externa de E. coli."
+    },
+    "thiamine_hcl": {
+      "conc_min_g_L": 0.001,
+      "funcion": "Vitamina B1, cofactor piruvato deshidrogenasa",
+      "advertencia": "Ausencia de tiamina B1: cofactor esencial del complejo piruvato deshidrogenasa. En cepas auxotrofas el crecimiento se detiene."
+    },
+    "trace_metals_solution": {
+      "conc_min_g_L": 0.5,
+      "funcion": "Zn, Mn, Mo, Co, Cu, B esenciales a nivel traza",
+      "advertencia": "Ausencia de trace_metals_solution: Zn2+, Mn2+, Mo, Co2+, Cu2+, B son cofactores de metaloproteinas esenciales."
+    },
+    "trace_element_sol": {
+      "conc_min_g_L": 0.5,
+      "funcion": "Solucion alternativa de metales traza",
+      "advertencia": "Ausencia de trace_element_sol: ver advertencia de trace_metals_solution."
+    }
+  },
+  "metabolitos_secundarios": {
+    "_comentario": "Overflow metabolico en E. coli. Fuente: Luli & Strohl 1990.",
+    "acetato": {
+      "mu_umbral_h": 0.8,
+      "descripcion": "Efecto Warburg bacteriano (overflow metabolico)",
+      "cdm_max_zona_alta_mu_g_L": 3.5,
+      "cdm_max_zona_baja_mu_g_L": 30.0,
+      "sigmoid_k": 8.0,
+      "cross_penalty_steepness": 2.0,
+      "_steepness_nota": "Multiplicador de penalizacion: pen = min(1, exceso_fraccion * steepness). Con 2.0 un exceso del 10% da penalizacion 0.20. Valor anterior (0.5) daba 0.05, insuficiente para desplazar formulaciones en la zona de transicion.",
+      "advertencia": "Riesgo de overflow metabolico: µ > 0.80 h-1 supera el umbral de overflow. Se espera acumulacion de acetato que limitara la CDM real por debajo de lo predicho. Considerar fed-batch o reducir glucosa inicial."
+    },
+    "formiato_lactato": {
+      "mu_umbral_h": 1.2,
+      "descripcion": "Fermentacion mixta",
+      "advertencia": "µ predicho muy alto: E. coli activa fermentacion mixta (formiato + lactato) incluso en aerobio si la demanda de O2 supera la transferencia del biorreactor."
+    }
+  },
+  "osmolaridad": {
+    "_comentario": "Limites de presion osmotica. Fuente: Cayley et al 1991, Shabala et al 2009.",
+    "optima_mOsm_kg": 400,
+    "umbral_suave_mOsm_kg": 800,
+    "umbral_fuerte_mOsm_kg": 1000,
+    "cap_letal_mOsm_kg": 1200,
+    "advertencia_suave": "Osmolaridad elevada: por encima de 800 mOsm/kg E. coli activa respuestas osmoticas (trehalosa, prolina), consumiendo energia y reduciendo la tasa real.",
+    "advertencia_fuerte": "Osmolaridad muy alta: por encima de 1000 mOsm/kg la CDM real se reduce marcadamente.",
+    "advertencia_letal": "CRITICO: osmolaridad letal. Por encima de 1200 mOsm/kg el crecimiento cesa y la viabilidad cae rapidamente."
+  },
+  "pesos_de_penalizacion": {
+    "_jerarquia_biologica": "overflow_mu_cdm > temperatura > redundancia > osmolaridad > pH > nitrogeno > rpm",
+    "_justificacion": {
+      "temperatura": "Desnaturalizacion proteica en horas. Efecto letal rapido. Mayor sub-peso dentro de Capa 1.",
+      "pH": "Afecta todas las enzimas y el transporte de membrana. Segundo mas critico en Capa 1.",
+      "overflow_mu_cdm": "A mu>0.80 h-1 la CDM predicha es biologicamente imposible por acumulacion de acetato. Penalizacion fuerte (0.35) para que el optimizador no explote la zona de transicion sigmoide.",
+      "nitrogeno": "N-limitante detiene el crecimiento pero no mata las celulas de inmediato. Gradual. Peso moderado (0.15).",
+      "osmolaridad": "E.coli tolera hasta ~800 mOsm con respuesta de estres. Inhibicion gradual. Peso menor (0.15).",
+      "rpm": "Parametro ajustable en laboratorio. Sub-peso minimo dentro de Capa 1 (0.15)."
+    },
+    "capa1_entorno": 0.28,
+    "capa2_estequiometria_N": 0.12,
+    "capa4_overflow_mu_cdm": 0.3,
+    "capa5_osmolaridad": 0.15,
+    "sub_pesos_capa1": {
+      "_comentario": "Pesos relativos dentro de Capa 1. Suman 1.0.",
+      "temperature_C": 0.5,
+      "pH": 0.35,
+      "agitation_rpm": 0.15
+    },
+    "capa6_redundancia": 0.15,
+    "_suma": "0.28+0.12+0.30+0.15+0.15 = 1.00"
+  },
+  "filtro1_frecuencia": {
+    "umbral_P1": 0.1,
+    "umbral_P2": 0.2
+  },
+  "roles_funcionales": {
+    "_comentario": "Clasificacion de componentes por rol funcional. Cada categoria tiene un maximo de fuentes permitidas. El exceso genera penalizacion en Capa 6.",
+    "_principio": "Un medio bien formulado asigna a cada componente una funcion especifica y no repetida. Tener dos fuentes del mismo tipo es redundante, incrementa costos y dificulta la interpretacion experimental.",
+    "fuente_carbono_primaria": {
+      "_descripcion": "Sustrato principal de energia y carbono estructural.",
+      "_max_permitido": 1,
+      "_penalizacion_por_exceso": 0.4,
+      "componentes": [
+        "glucose",
+        "glycerol",
+        "sucrose",
+        "lactose",
+        "galactose",
+        "fructose",
+        "sodium_acetate",
+        "sodium_pyruvate"
+      ]
+    },
+    "fuente_nitrogeno_organica": {
+      "_descripcion": "Hidrolizados proteicos: aportan N + aminoacidos + vitaminas + C. Son intercambiables entre si.",
+      "_max_permitido": 1,
+      "_penalizacion_por_exceso": 0.4,
+      "_razon": "Triptona y extracto de levadura tienen perfiles nutricionales solapados. Un medio con ambos es equivalente funcional a uno con solo el mas concentrado, con el costo de introducir variabilidad de lote en dos productos distintos.",
+      "componentes": [
+        "tryptone",
+        "yeast_extract",
+        "casamino_acids",
+        "peptone_from_casein",
+        "meat_extract",
+        "cheese_whey",
+        "cereal_flour_mix"
+      ]
+    },
+    "fuente_nitrogeno_inorganica": {
+      "_descripcion": "Sales de amonio: fuente de N simple y definida. Una es suficiente.",
+      "_max_permitido": 1,
+      "_penalizacion_por_exceso": 0.35,
+      "componentes": [
+        "ammonium_chloride",
+        "ammonium_sulfate",
+        "ammonium_dihydrogen_phosphate",
+        "nh42hpo4",
+        "nh4h2po4",
+        "urea"
+      ]
+    },
+    "solucion_metales_traza": {
+      "_descripcion": "Mezclas comerciales de microelementos (Zn, Mn, Mo, Co, Cu, B). Son equivalentes entre si.",
+      "_max_permitido": 1,
+      "_penalizacion_por_exceso": 0.5,
+      "_razon": "trace_metals_solution y trace_element_sol cumplen identicamente el mismo rol. Usar ambas duplica la dosis de oligoelementos sin justificacion biologica y puede causar toxicidad por exceso de Cu o Zn.",
+      "componentes": [
+        "trace_metals_solution",
+        "trace_element_sol",
+        "trace_elements_a",
+        "trace_elements_b",
+        "trace_element_solution"
+      ]
+    },
+    "fuente_fosfato": {
+      "_descripcion": "Fosfato inorganico: buffer y fuente de P. Normalmente uno es suficiente.",
+      "_max_permitido": 2,
+      "_penalizacion_por_exceso": 0.2,
+      "_razon": "KH2PO4 + K2HPO4 en combinacion actuan como buffer de fosfato — esta combinacion es biologicamente justificada. Mas de dos fuentes de fosfato distintas es redundante.",
+      "componentes": [
+        "kh2po4",
+        "k2hpo4",
+        "k2hpo4_3h2o",
+        "nah2po4",
+        "na2hpo4",
+        "ammonium_dihydrogen_phosphate",
+        "na2hpo4_2h2o"
+      ]
+    },
+    "buffer_organico": {
+      "_descripcion": "Buffers zwitterionicos (MOPS, HEPES, Tricina). Son intercambiables.",
+      "_max_permitido": 1,
+      "_penalizacion_por_exceso": 0.3,
+      "componentes": [
+        "mops",
+        "tricine",
+        "hepes",
+        "tris",
+        "pipes"
+      ]
+    },
+    "vitamina_b1": {
+      "_descripcion": "Tiamina (vitamina B1). Los dos nombres son el mismo compuesto.",
+      "_max_permitido": 1,
+      "_penalizacion_por_exceso": 0.5,
+      "_razon": "thiamine_hcl y thiamine_HCl son exactamente el mismo compuesto con nombres distintos por normalizacion del dataset.",
+      "componentes": [
+        "thiamine_hcl",
+        "thiamine_HCl"
+      ]
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "glucose": {
+    "mw": 180.16,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "nacl": {
+    "mw": 58.44,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "mgso4_7h2o": {
+    "mw": 246.47,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "cacl2_2h2o": {
+    "mw": 147.01,
+    "n_ions": 3,
+    "formula": "",
+    "source": "fallback"
+  },
+  "ammonium_chloride": {
+    "mw": 53.49,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "kh2po4": {
+    "mw": 136.09,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "k2so4": {
+    "mw": 174.26,
+    "n_ions": 3,
+    "formula": "",
+    "source": "fallback"
+  },
+  "feso4_7h2o": {
+    "mw": 278.01,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "thiamine_hcl": {
+    "mw": 337.27,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "mops": {
+    "mw": 209.26,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "tricine": {
+    "mw": 179.17,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "ammonium_dihydrogen_phosphate": {
+    "mw": 115.03,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "ammonium_molybdate_4h2o": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "ammonium_sulfate": {
+    "mw": 132.14,
+    "n_ions": 3,
+    "formula": "",
+    "source": "fallback"
+  },
+  "boric_acid": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "citric_acid": {
+    "mw": 192.12,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "cupric_sulfate_5h2o": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "koh": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "manganese_chloride_4h2o": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "mgso4": {
+    "mw": 120.37,
+    "n_ions": 2,
+    "formula": "",
+    "source": "fallback"
+  },
+  "cobalt_chloride_6h2o": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "mgcl2_6h2o": {
+    "mw": 203.3,
+    "n_ions": 3,
+    "formula": "",
+    "source": "fallback"
+  },
+  "nh42hpo4": {
+    "mw": 132.06,
+    "n_ions": 3,
+    "formula": "",
+    "source": "fallback"
+  },
+  "naoh": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "sodium_citrate": {
+    "mw": 258.07,
+    "n_ions": 4,
+    "formula": "",
+    "source": "fallback"
+  },
+  "zinc_sulfate_7h2o": {
+    "mw": 200.0,
+    "n_ions": 1,
+    "formula": "",
+    "source": "fallback"
+  },
+  "k2hpo4_3h2o": {
+    "mw": 228.22,
+    "n_ions": 3,
+    "formula": "",
+    "source": "fallback"
+  }
+}
